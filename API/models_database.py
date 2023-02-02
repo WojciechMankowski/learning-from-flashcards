@@ -17,6 +17,7 @@ class Flascard(Base):
     id = Column(Integer, primary_key=True, index=True)
     question= Column(String)
     answer= Column(String)
+    lavel = Column(String)
 
 class Flascards(Base):
     __tablename__ = "flascards"

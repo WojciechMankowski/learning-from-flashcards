@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+// TODO widoki: menu, logowanie, rejestracja, dodawanie nowych zestawów, dodawanie nowych fiszek, edycja, nauka
 
+import Card from "./components/card"
+import { connectToAPI } from "./helpers/connectApi"
+// TODO kompomenty: input, select, przycisk,
+// TODO funkcja łączenia z api
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const connect = connectToAPI("GET", "")
+  connect.then(res=> console.log(res))
+	return (
+		<div className="App">
+      <Card/>
+		</div>
+	)
 }
 
-export default App;
+export default App
