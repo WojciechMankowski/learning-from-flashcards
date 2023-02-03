@@ -1,3 +1,4 @@
+import Button from "./button";
 const Card = props => {
     const showAnser = () => { 
         const defult = [...document.querySelectorAll(".defult")]
@@ -17,12 +18,11 @@ const Card = props => {
 			</div>
 
 			<div>
-				<button onClick={showAnser} id="answer">Pokaż odpowiedź</button>
-				<div className="defult">
-					<button>Powtórz</button>
-					<button>Łatwe</button>
-					<button>Średnie</button>
-					<button>Trudne</button>
+				<Button text="Pokaż odpowieść" type="button" function={showAnser} id="answer"/>
+				<div className="defult level">
+					<Button text="Łatwe"/>
+					<Button text="Średnie"/>
+					<Button text="Trudne"/>
 				</div>
 			</div>
 		</div>

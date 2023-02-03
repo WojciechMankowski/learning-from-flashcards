@@ -1,11 +1,11 @@
 const Button = props => {
 	return (
-		<button
+		<button className="btn"
 			onClick={(e) => {
 				props.function(e)
 			}}
-			type={props.type}>
-			{props.text}
+			type={props.type} id={props.id}>
+			{props.text} 
 		</button>
 	)
 }

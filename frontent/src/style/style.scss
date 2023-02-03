@@ -1,6 +1,5 @@
-$bacground: #ffff;
-$akcent_yellow: #ffe73a;
-$akcent_orange: #fb9824;
+@import "_vars";
+@import "_mixins";
 
 body {
 	padding: 0;
@@ -14,21 +13,43 @@ body {
 	justify-items: center;
 	flex-direction: column;
 }
+
+.nav ul {
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+}
+.nav ul > li {
+	padding-right: 12px;
+}
+.nav a {
+	color: black;
+	text-decoration: none;
+	word-spacing: 10px;
+}
 .container {
-	padding: 6px 12px;
+	padding: $padding;
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	justify-self: center;
 }
 .question {
-    padding: 6px 12px;
-    border: 1px $akcent_orange solid;
-    border-radius: 15px;
-    text-align: center;
+	@include card;
 }
 .anser {
-    padding: 6px 12px;
-    border: 1px $akcent_orange solid;
-    border-radius: 15px;
-    text-align: center;
+	@include card;
 }
 .defult {
-    display: none;
+	display: none;
+}
+.btn {
+	@include button;
+}
+.level button{
+	margin-right: 6px;
+}
+button:hover{
+	background-color: $akcent_yellow;
+	cursor: pointer;
 }

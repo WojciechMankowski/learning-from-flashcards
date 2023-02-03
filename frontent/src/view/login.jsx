@@ -15,9 +15,6 @@ const Login = props => {
 			.then(response => response.json())
 			.then(data => setData(data))
 			.catch(error => console.error(error))
-		console.log(data.password !== password)
-		console.log(data["password"])
-		console.log(password)
 		if (data.password !== password) {
 			setError("Błądne dane")
 		} else {
@@ -25,7 +22,7 @@ const Login = props => {
 		}
 	}
 	return (
-		<form>
+		<form className="container ">
 			{error}
 			<label htmlFor="">
 				Nazwa użytkownika <Input type={"teext"} set={setName} />

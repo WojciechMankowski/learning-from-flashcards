@@ -2,9 +2,13 @@ import { Link } from "react-router-dom"
 import Card from "../components/card"
 const Menu = params => {
 	return (
-		<nav>
-			<Link to={"/"}>Home</Link>
-			<Link to={"/login"}>Logowanie</Link>
+		<nav className="nav">
+			<ul>
+				<li><Link to={"/"}>Home</Link></li>
+				<li><Link to={"/login"}>Logowanie</Link></li>
+			</ul>
+			
+			
 		</nav>
 	)
 }
