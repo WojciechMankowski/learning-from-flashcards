@@ -1,0 +1,34 @@
+$bacground: #ffff;
+$akcent_yellow: #ffe73a;
+$akcent_orange: #fb9824;
+
+body {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	background: $bacground;
+}
+#root {
+	display: flex;
+	align-items: center;
+	justify-items: center;
+	flex-direction: column;
+}
+.container {
+	padding: 6px 12px;
+}
+.question {
+    padding: 6px 12px;
+    border: 1px $akcent_orange solid;
+    border-radius: 15px;
+    text-align: center;
+}
+.anser {
+    padding: 6px 12px;
+    border: 1px $akcent_orange solid;
+    border-radius: 15px;
+    text-align: center;
+}
+.defult {
+    display: none;
+}

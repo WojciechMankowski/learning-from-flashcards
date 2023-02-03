@@ -1,9 +1,23 @@
 from fastapi import FastAPI, Depends, HTTPException
+from starlette.middleware.cors import CORSMiddleware
+
 from database import engine, sessionLocal
 import models_database
 from models import Flashcard, Flashcards, UserModel
 
 app = FastAPI()
+origins = [
+    "*"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 models_database.Base.metadata.create_all(bind=engine)
 
 def get_db():
@@ -17,9 +31,9 @@ def get_db():
 def get_user(db: sessionLocal = Depends(get_db)):
     return db.query(models_database.User).all()
 
-@app.get("/user/{id}")
-def get_user(id: int, db: sessionLocal = Depends(get_db)):
-    user_model = db.query(models_database.User).filter(models_database.User.id==id).first()
+@app.get("/user/{name}")
+def get_user(name: str, db: sessionLocal = Depends(get_db)):
+    user_model = db.query(models_database.User).filter(models_database.User.username==name).first()
     if user_model is None:
         raise HTTPException(
             status_code=404,
